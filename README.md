@@ -71,6 +71,56 @@ Tools:
 
 ## Architecture
 
+                    +------------------+
+                    |     Postman      |
+                    +--------+---------+
+                             |
+                             v
+                    +------------------+
+                    |   REST APIs      |
+                    |  Controllers     |
+                    +--------+---------+
+                             |
+                             v
+                    +------------------+
+                    |    Services      |
+                    |------------------|
+                    | AuthService      |
+                    | AuditLogService  |
+                    | AccountLockSvc   |
+                    | JwtService       |
+                    +--------+---------+
+                             |
+                             v
+                    +------------------+
+                    | Spring Security  |
+                    | JWT Validation   |
+                    | RBAC             |
+                    +--------+---------+
+                             |
+                             v
+                    +------------------+
+                    | Repositories     |
+                    | Spring Data JPA  |
+                    +--------+---------+
+                             |
+                             v
+                    +------------------+
+                    | MySQL Database   |
+                    +------------------+
+
+Database Tables
+---------------
+Users
+Roles
+Permissions
+User_Roles
+Role_Permissions
+Tenants
+Refresh_Tokens
+Audit_Logs
+Password_Reset_Tokens
+
 Client (Postman)
 |
 v
@@ -138,7 +188,7 @@ GET /api/audit
 
 ### Clone Project
 
-git clone <repository-url>
+git clone <[repository-url](https://github.com/Udaykiran-07/oauth-security-system)>
 
 cd oauth-security-system
 
@@ -216,7 +266,3 @@ postman/OAuthSecuritySystem.postman_collection.json
 ## Author
 
 Shanmuga Sri Udaykiran M S
-
-Final Year Electronics and Communication Engineering
-
-Karpagam College of Engineering
