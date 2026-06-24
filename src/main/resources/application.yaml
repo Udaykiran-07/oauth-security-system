@@ -1,0 +1,44 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: oauth-security-system
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/oauth_security_db
+    username: root
+    password: Shanmugam@1432
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+
+    properties:
+      hibernate:
+        format_sql: true
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+rsa:
+  public-key-path: classpath:keys/public.key
+  private-key-path: classpath:keys/private.key
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
